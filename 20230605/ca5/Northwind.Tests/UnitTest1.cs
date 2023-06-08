@@ -1,7 +1,6 @@
 using Northwind.Data;
 using Northwind.Data.Extensions;
 using Northwind.Model;
-using System.Runtime.Intrinsics.Arm;
 
 namespace Northwind.Tests
 {
