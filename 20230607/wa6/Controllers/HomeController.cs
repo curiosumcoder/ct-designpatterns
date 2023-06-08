@@ -14,13 +14,24 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+    // https://localhost:7199/?filter=a
+    public IActionResult Index(string filter="")
     {
         //ViewBag
         //ViewData
         //return View("");
-        
-        return View();
+
+        ViewBag.filter = filter;
+
+        var pD = new wa6.Data.ProductD();
+        var model = pD.List();
+
+        // LINQ (Language Integrated Query, aka/C++: algorithms)
+        //model = model.Where(p => p.Name.Contains(filter)).ToList();
+        model = model.Where(p => p.Name.Contains(filter, 
+        StringComparison.CurrentCultureIgnoreCase)).ToList();
+
+        return View(model);
     }
 
     public IActionResult Privacy()

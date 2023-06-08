@@ -1,4 +1,4 @@
-﻿@model List<wa6.Models.
+﻿@model List<wa6.Models.Product>
 
 @{
     ViewData["Title"] = "Home Page";
@@ -8,3 +8,21 @@
     <h1 class="display-4">Welcome to ASP.NET Core MVC</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<form asp-action="Index">
+    Filter: <input type="text" name="filter" 
+    placeholder="Type here ..."  
+    value="@ViewBag.filter"/>
+    <button type="submit">Submit</button>
+</form>
+<hr/>
+
+@if (Model != null && Model.Count > 0)
+{
+    <ul>
+        @foreach (var p in Model)
+        {
+            <li>@p.Name, @p.Price</li>
+        }
+    </ul>
+}
