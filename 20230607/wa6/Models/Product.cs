@@ -1,4 +1,4 @@
-namespace wa6.Model
+namespace wa6.Models
 {
     public class Product
     {
