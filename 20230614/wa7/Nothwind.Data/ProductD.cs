@@ -2,7 +2,7 @@
 
 namespace Nothwind.Data
 {
-    public class ProductD
+    public class ProductD : IMaintenance<Product>
     {
         List<Product> products = new List<Product>();
 
