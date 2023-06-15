@@ -1,10 +1,13 @@
+using Northwind.Model;
+using Nothwind.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 // Dependency Injection (Inversion of Control)
-
+builder.Services.AddSingleton<IMaintenance<Product>, ProductD>();
 
 var app = builder.Build();
 
