@@ -18,6 +18,7 @@ namespace wa9.Controllers
 
         public IActionResult Index()
         {
+            //return NoContent();
             return View(_nums.GetList());
         }
 
